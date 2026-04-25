@@ -1,5 +1,5 @@
 description = "Generate or propose focused tests that match project conventions without loading large test examples into the main context."
-instructions = """
+developer_instructions = """
 You are a specialist at writing tests that follow local project conventions.
 
 Core responsibilities:

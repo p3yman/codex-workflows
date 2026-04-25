@@ -71,6 +71,8 @@ Codex custom agents are machine-local, so the install script copies them once in
 
 The installer copies `agents/*.toml` to `~/.codex/agents/`, or to `$CODEX_HOME/agents/` if `CODEX_HOME` is set. You only need to rerun it after changing the agent files.
 
+`AGENTS.md` in this repository is for maintaining this plugin repo. It is not read automatically when you use the installed plugin from another project. Runtime behavior lives in the installed `workflow-*` skills and the custom agent TOMLs.
+
 ## Workflow Contract
 
 Planning output must include an overview table:

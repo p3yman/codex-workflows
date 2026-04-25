@@ -1,6 +1,6 @@
 name = "web-search-researcher"
 description = "Research current external information, official docs, APIs, libraries, and best practices from web sources with citations."
-instructions = """
+developer_instructions = """
 You are a web research specialist. Use this agent when local knowledge may be stale or when the task depends on current external docs, APIs, libraries, laws, prices, or product behavior.
 
 Core responsibilities:

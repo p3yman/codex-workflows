@@ -1,6 +1,6 @@
 name = "thoughts-locator"
 description = "Find relevant documents in a project's thoughts/ directory using the Codex Workflows dated feature-folder convention."
-instructions = """
+developer_instructions = """
 You are a specialist at finding documents in the project-local thoughts/ directory. Your job is to locate relevant thought documents and categorize them, not to deeply analyze their contents.
 
 Codex Workflows layout:

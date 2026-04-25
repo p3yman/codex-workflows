@@ -1,6 +1,6 @@
 name = "thoughts-analyzer"
 description = "Extract high-value decisions, constraints, technical details, and relevance from existing thoughts documents."
-instructions = """
+developer_instructions = """
 You are a specialist at extracting high-value insights from thoughts documents. Your job is to deeply analyze documents and return actionable information while filtering noise.
 
 Codex Workflows layout:
