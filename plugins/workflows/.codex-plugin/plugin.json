@@ -1,19 +1,19 @@
 {
   "name": "workflows",
   "version": "0.1.0",
-  "description": "Research, plan, implement, verify, and share feature work with project-local thoughts.",
+  "description": "Research, plan, implement, QA, and share feature work with project-local thoughts.",
   "repository": "https://github.com/peyman/codex-workflows",
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
     "displayName": "Workflows",
-    "shortDescription": "Research, plan, implement, and track feature work.",
+    "shortDescription": "Research, plan, implement, QA, and track feature work.",
     "category": "Productivity",
     "defaultPrompt": [
       "Use Workflows to research this feature.",
       "Use Workflows to plan this feature.",
-      "Use Workflows to implement the next phase from the plan."
+      "Use Workflows to implement the next phase from the plan.",
+      "Use Workflows to QA this completed feature."
     ]
   }
 }
-

@@ -3,7 +3,7 @@
 Codex Workflows is a small plugin for feature work that should survive context resets. It keeps the work in a project-local `thoughts/` folder and follows a simple rhythm:
 
 ```text
-research -> plan -> implement -> verify -> share
+research -> plan -> implement phases -> qa -> share
 ```
 
 Each feature gets a dated folder:
@@ -29,9 +29,10 @@ The feature index lives at `thoughts/index.md`. When work is finished, update it
 ## Skills
 
 - `$workflow-research`: create or update `research.md` for a dated feature folder.
-- `$workflow-plan`: create `plan.md` from research/context.
-- `$workflow-implement`: implement one checked phase at a time, update `changelog.md`, and mark completed plan checkboxes.
-- `$workflow-verify`: run verification and summarize results.
+- `$workflow-plan`: create a decision-complete `plan.md` from research/context with detailed phase tasks and blocking questions.
+- `$workflow-implement`: implement one phase at a time, resolve blocking questions, update `changelog.md`, mark completed phase tasks, and commit related chunks.
+- `$workflow-verify`: tactically run or re-run verification and summarize results.
+- `$workflow-qa`: final quality gate across research, plan, changelog, branch changes, commits, verification coverage, and draft PR readiness.
 - `$workflow-share`: finalize the feature, update `thoughts/index.md`, and produce a concise review.
 
 ## Install
@@ -75,11 +76,17 @@ The installer copies `agents/*.toml` to `~/.codex/agents/`, or to `$CODEX_HOME/a
 
 ## Workflow Contract
 
-Planning output must include an overview table:
+Planning output must include `## Opening Questions`, an overview table, detailed phase sections, acceptance criteria, out of scope, and verification.
+
+The overview table must use:
 
 | Phase | Short Description | T-shirt Size | Change Surface | Line Areas | Verification |
 |---|---|---|---|---|---|
 
 `Change Surface` describes expected files and modules. `Line Areas` describes known functions, sections, selectors, docs headings, or exact line numbers when research found them. Do not invent exact line numbers before implementation.
 
-Each `plan.md` phase also has checkboxes. When a phase is implemented, update `changelog.md` and mark only the completed phase checkbox in `plan.md`.
+Each `plan.md` phase must include an objective, implementation decisions, task checklist, blocking questions, verification, and commit plan. Plans should be decision-complete wherever repo evidence supports a choice; only true implementation blockers should remain as questions.
+
+When a phase is implemented, resolve or ask blocking questions first, update `changelog.md`, mark only completed phase tasks and the completed phase checkbox, then stage and commit related chunks on the current branch. When the final phase is complete, run `$workflow-qa` instead of separately running `$workflow-verify`.
+
+`$workflow-qa` checks that research, plan, implementation, changelog, commits, and verification agree. If problems remain, it reports required fixes and does not create a PR. If QA passes, it asks whether to create a draft PR for review.

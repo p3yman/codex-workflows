@@ -1,6 +1,6 @@
 ---
 name: workflow-plan
-description: Use when turning feature research or context into a Codex Workflows plan.md with a phase overview table, T-shirt sizing, change surface, verification, and checkbox phases.
+description: Use when turning feature research or context into a Codex Workflows plan.md with a phase overview table, detailed phase task lists, blocking questions, verification, and commit guidance.
 ---
 
 # Feature Plan
@@ -33,7 +33,18 @@ Before writing the plan, use focused agents when their output would reduce guess
 
 Create or update `plan.md` from `plugins/workflows/assets/templates/plan.md`.
 
-Every plan must include an overview table:
+Every plan must be decision-complete where repo evidence supports a choice. Do not leave implementation approach, file ownership, verification, or commit boundaries for the implementer to invent. Record only true unknowns as questions.
+
+Every plan must include:
+
+- `## Opening Questions` for cross-cutting questions to ask later only when they block implementation.
+- `## Overview` with the phase table.
+- `## Phases` with one detailed section per phase.
+- `## Acceptance Criteria`.
+- `## Out of Scope`.
+- `## Verification`.
+
+The overview table must use this shape:
 
 | Phase | Short Description | T-shirt Size | Change Surface | Line Areas | Verification |
 |---|---|---|---|---|---|
@@ -49,14 +60,36 @@ Column rules:
 
 Do not invent exact line numbers before implementation unless research found them.
 
-## Checkbox Phases
+## Detailed Phases
 
-Include a `## Phases` section with one checkbox per phase:
+Include one section per phase:
 
 ```md
-- [ ] Phase 1: Short phase name
-- [ ] Phase 2: Short phase name
+### Phase 1: Short phase name
+
+- [ ] Phase 1 complete
+
+Objective:
+- One compact statement of what this phase accomplishes.
+
+Implementation Decisions:
+- Decision-complete bullets for approach, ownership, data flow, and constraints.
+
+Tasks:
+- [ ] Concrete implementation task.
+- [ ] Concrete documentation or workflow task.
+
+Blocking Questions:
+- None.
+
+Verification:
+- Exact command or manual check for this phase.
+
+Commit Plan:
+- Commit related chunks after verification and workflow doc updates.
 ```
+
+When a phase has open questions, write only questions that would block that phase. If the likely answer can be inferred from repo context, choose it and record the decision instead of asking.
 
 ## Output
 
