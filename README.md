@@ -49,6 +49,26 @@ codex plugin marketplace add peyman/codex-workflows --ref main
 
 Then open `/plugins`, install **Workflows**, and start a new Codex thread.
 
+## Upgrade
+
+After a new plugin version is merged, upgrade the local Codex plugin cache with:
+
+```bash
+codex plugin marketplace upgrade codex-workflows
+```
+
+Then start a new Codex thread so the updated skills are loaded.
+
+The plugin and custom agents update through different paths:
+
+| Changed files | What to run |
+|---|---|
+| `plugins/workflows/**` | `codex plugin marketplace upgrade codex-workflows` |
+| `agents/*.toml` | `./install-agents.sh` |
+| Both | Run both commands |
+
+`install-agents.sh` only copies custom agent TOML files into `~/.codex/agents`; it does not update workflow skills or templates.
+
 ## Global Agents
 
 The plugin provides the workflow skills. The `agents/` directory provides custom agents that make those skills useful for focused research, implementation support, and verification:
