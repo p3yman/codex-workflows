@@ -3,7 +3,7 @@
 Use the Codex Workflows ritual for substantial feature work:
 
 ```text
-research -> plan -> implement -> verify -> share
+research -> plan -> implement phases -> qa -> share
 ```
 
 Store feature memory in:
@@ -19,12 +19,16 @@ Use `01` through `99` for the daily sequence. Pick the next available number for
 
 The root index is `thoughts/index.md`. When a feature is finished, append or update one compact entry with the date, sequence, feature slug, one-line review, and links to `research.md`, `plan.md`, and `changelog.md`.
 
-Planning must include an overview table with:
+Planning must include `## Opening Questions`, detailed phase sections, acceptance criteria, out of scope, verification, and an overview table with:
 
 | Phase | Short Description | T-shirt Size | Change Surface | Line Areas | Verification |
 |---|---|---|---|---|---|
 
-Also include checkbox phases in `plan.md`. After implementing a phase, update `changelog.md`, mark only that phase complete in `plan.md`, and note verification performed or still missing.
+Each phase must include an objective, implementation decisions, task checklist, blocking questions, verification, and commit plan. Make plans decision-complete wherever repo evidence supports a choice; record only true implementation blockers as questions.
+
+Before implementing a phase, inspect global opening questions and that phase's blocking questions. Ask the user only when unresolved questions block that phase. After implementing a phase, update `changelog.md`, mark only completed phase tasks and that phase complete in `plan.md`, note verification performed or still missing, then stage and commit related chunks to the current branch.
+
+After the final phase, use `workflow-qa` as the final quality gate. It checks research, plan, changelog, branch changes, commits, verification coverage, and PR readiness. If QA passes, ask whether to create a draft PR; if it fails, report required fixes and do not create a PR.
 
 ## Workflow Agents
 

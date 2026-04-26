@@ -1,11 +1,13 @@
 ---
 name: workflow-verify
-description: Use when verifying a Codex Workflows feature implementation. Runs or recommends build, lint, test, and manual checks, then summarizes results concisely.
+description: Use when tactically verifying a Codex Workflows feature implementation. Runs or recommends build, lint, test, and manual checks, then summarizes results concisely.
 ---
 
 # Verify Implementation
 
 Use this skill to verify implementation work without dumping raw logs.
+
+This is a tactical check-running skill. It is useful during implementation or when the user wants to re-run checks, but it is not the final feature quality gate. After all phases are complete, use `workflow-qa`; that skill reviews the full feature record, branch changes, verification coverage, and PR readiness.
 
 ## Workflow
 
