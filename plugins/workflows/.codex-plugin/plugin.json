@@ -1,6 +1,6 @@
 {
   "name": "workflows",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Research, plan, implement, QA, and share feature work with project-local thoughts.",
   "repository": "https://github.com/peyman/codex-workflows",
   "license": "MIT",

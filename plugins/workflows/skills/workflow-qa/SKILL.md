@@ -38,10 +38,15 @@ If no folder is specified, use the most recent feature folder whose `plan.md` ha
    - no obvious TODOs, debug leftovers, or incomplete docs block review
 6. Run missing final verification when feasible, using the plan overview, phase verification, and acceptance criteria as the source of truth.
 7. Use `error-analyzer` for cryptic failures, stack traces, or log-heavy failures.
-8. If any QA problem remains, report the required fixes and do not create a PR.
-9. If QA passes, ask whether the user wants a draft PR.
-10. If the user approves, create a draft PR for review using the available GitHub tooling.
-11. If PR creation is blocked by missing GitHub context, permissions, or tooling, report the exact fallback command or action.
+8. If the branch changes plugin runtime behavior, skill instructions, templates, plugin metadata, or user-facing workflow docs, confirm `plugins/workflows/.codex-plugin/plugin.json` has an appropriate semver bump.
+9. If any QA problem remains, report the required fixes and do not create a PR.
+10. If QA passes, ask whether the user wants a draft PR.
+11. If the user approves, create a draft PR for review using the available GitHub tooling.
+12. If PR creation is blocked by missing GitHub context, permissions, or tooling, report the exact fallback command or action.
+13. After creating or proposing the PR, report what users need to do after merge:
+   - run `codex plugin marketplace upgrade codex-workflows` for plugin changes
+   - start a new Codex thread after upgrading
+   - run `./install-agents.sh` too when `agents/*.toml` changed
 
 ## Agent Use
 
@@ -74,4 +79,6 @@ When QA passes, report:
 
 - Create a draft PR by default so the implementation can be reviewed before merge.
 - The PR body should summarize the feature, link the feature folder, list verification, and call out residual risks.
+- The PR body should mention the plugin version bump when plugin files changed.
 - Do not create a PR when the working tree contains unrelated dirty changes, planned tasks are unchecked, blocking questions remain, or verification required by the plan has failed.
+- The PR result should include post-merge upgrade instructions for local Codex users.

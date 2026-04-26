@@ -30,6 +30,16 @@ Before implementing a phase, inspect global opening questions and that phase's b
 
 After the final phase, use `workflow-qa` as the final quality gate. It checks research, plan, changelog, branch changes, commits, verification coverage, and PR readiness. If QA passes, ask whether to create a draft PR; if it fails, report required fixes and do not create a PR.
 
+## Versioning and PRs
+
+When a PR changes plugin runtime behavior, skill instructions, templates, plugin metadata, or user-facing workflow docs, bump `plugins/workflows/.codex-plugin/plugin.json` before creating the PR. Use the smallest appropriate semver bump:
+
+- patch for skill/docs/template fixes and workflow guidance changes
+- minor for new skills, new user-visible workflow capabilities, or compatible behavior additions
+- major for breaking workflow contract changes
+
+PR creation should report what users need to do after merge. At minimum, tell them to run `codex plugin marketplace upgrade codex-workflows` and start a new Codex thread. If `agents/*.toml` changed, also tell them to run `./install-agents.sh`.
+
 ## Workflow Agents
 
 Use the installed custom agents when they match the task:
