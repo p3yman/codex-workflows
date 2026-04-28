@@ -1,15 +1,16 @@
 {
   "name": "workflows",
-  "version": "0.1.2",
-  "description": "Research, plan, implement, QA, and share feature work with project-local thoughts.",
+  "version": "0.2.0",
+  "description": "Capture Linear issues, research, plan, implement, QA, and share feature work.",
   "repository": "https://github.com/peyman/codex-workflows",
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
     "displayName": "Workflows",
-    "shortDescription": "Research, plan, implement, QA, and track feature work.",
+    "shortDescription": "Capture issues, research, plan, implement, QA, and track feature work.",
     "category": "Productivity",
     "defaultPrompt": [
+      "Use Workflows to turn this rough idea into a Linear issue.",
       "Use Workflows to research this feature.",
       "Use Workflows to plan this feature.",
       "Use Workflows to implement the next phase from the plan.",

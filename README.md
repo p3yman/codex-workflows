@@ -1,6 +1,6 @@
 # Codex Workflows
 
-Codex Workflows is a small plugin for feature work that should survive context resets. It keeps the work in a project-local `thoughts/` folder and follows a simple rhythm:
+Codex Workflows is a small plugin for feature work that should survive context resets. It can also turn rough ideas into Linear issues before they become planned project work. For larger work, it keeps context in a project-local `thoughts/` folder and follows a simple rhythm:
 
 ```text
 research -> plan -> implement phases -> qa -> share
@@ -28,6 +28,7 @@ The feature index lives at `thoughts/index.md`. When work is finished, update it
 
 ## Skills
 
+- `$workflow-intake`: turn a rough idea, bug, chore, redesign, or vague Linear ticket into a clear Linear issue that can later feed research or planning.
 - `$workflow-research`: create or update `research.md` for a dated feature folder.
 - `$workflow-plan`: create a decision-complete `plan.md` from research/context with detailed phase tasks and blocking questions.
 - `$workflow-implement`: implement one phase at a time, resolve blocking questions, update `changelog.md`, mark completed phase tasks, and commit related chunks.
