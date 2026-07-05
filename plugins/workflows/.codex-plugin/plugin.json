@@ -1,8 +1,8 @@
 {
   "name": "workflows",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Capture Linear issues, research, plan, implement, QA, and share feature work.",
-  "repository": "https://github.com/peyman/codex-workflows",
+  "repository": "https://github.com/p3yman/codex-workflows",
   "license": "MIT",
   "skills": "./skills/",
   "interface": {

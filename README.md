@@ -45,7 +45,7 @@ The plugin is global to your Codex setup. The files it creates while you work, l
 Add this repo as a plugin marketplace on a machine:
 
 ```bash
-codex plugin marketplace add peyman/codex-workflows --ref main
+codex plugin marketplace add p3yman/codex-workflows --ref main
 ```
 
 Then open `/plugins`, install **Workflows**, and start a new Codex thread.
