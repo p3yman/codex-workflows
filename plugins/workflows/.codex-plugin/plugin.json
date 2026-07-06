@@ -1,20 +1,31 @@
 {
   "name": "workflows",
-  "version": "0.2.1",
-  "description": "Capture Linear issues, research, plan, implement, QA, and share feature work.",
+  "version": "3.0.0",
+  "description": "Set up project workflow context, grill and capture issues, research, spec, technical design, plan, implement, review, commit, remember durable knowledge, QA, and create ready PRs.",
   "repository": "https://github.com/p3yman/codex-workflows",
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
     "displayName": "Workflows",
-    "shortDescription": "Capture issues, research, plan, implement, QA, and track feature work.",
+    "shortDescription": "Run issue-to-PR workflows with durable project context.",
     "category": "Productivity",
     "defaultPrompt": [
+      "Use Workflows to set up this project.",
+      "Use Workflows to create or refresh this project's design doc.",
+      "Use Workflows to grill and clarify this rough issue before research.",
       "Use Workflows to turn this rough idea into a Linear issue.",
       "Use Workflows to research this feature.",
+      "Use Workflows to write a spec for this feature.",
+      "Use Workflows to write the technical design for this feature.",
+      "Use Workflows to write the TD for this feature.",
       "Use Workflows to plan this feature.",
       "Use Workflows to implement the next phase from the plan.",
-      "Use Workflows to QA this completed feature."
+      "Use Workflows to update this feature record.",
+      "Use Workflows to review this completed feature.",
+      "Use Workflows to commit the completed phase.",
+      "Use Workflows to remember durable decisions from this feature.",
+      "Use Workflows to QA this completed feature.",
+      "Use Workflows to create a ready pull request."
     ]
   }
 }
