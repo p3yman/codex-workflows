@@ -1,0 +1,25 @@
+# Codex Workflows project configuration.
+version: 1
+mode: "{mode:solo|team}"
+docs:
+  canonical_dir: ".context/docs"
+  index: ".context/docs/index.md"
+  existing:
+    - "{docs_path_or_none}"
+design:
+  file: ".context/docs/design.md"
+plans:
+  default_scope: "{local|shared}"
+  local_dir: ".context/plans/local"
+  shared_dir: ".context/plans/shared"
+knowledge:
+  index: ".context/knowledge/index.md"
+commands:
+  file: ".context/docs/commands.md"
+testing:
+  file: ".context/docs/testing.md"
+issues:
+  file: ".context/docs/issue.md"
+legacy:
+  commands_file: "{legacy_commands_path_or_none}"
+  testing_file: "{legacy_testing_path_or_none}"

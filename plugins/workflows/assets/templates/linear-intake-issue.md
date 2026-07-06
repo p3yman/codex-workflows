@@ -18,6 +18,11 @@
 
 - {likely_solution_or_product_direction}
 
+## UI/UX Notes
+
+- Design doc: {design_doc_path_or_none}
+- Visual, interaction, accessibility, or responsive constraints: {constraint_or_none}
+
 ## Acceptance Criteria
 
 - [ ] {observable_outcome}
@@ -29,6 +34,7 @@
 ## Open Questions
 
 - {question_or_none}
+- Recommended option/default: {recommended_option_or_none}
 
 ## Workflow Handoff
 
