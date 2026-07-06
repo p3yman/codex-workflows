@@ -30,7 +30,7 @@ Start a new Codex thread after upgrading.
 
 ## Project Setup
 
-Run setup once in each target project before using the lifecycle.
+Run setup once in each target project before using the lifecycle. For projects with UI, frontend, or product-design work, run design setup immediately after project setup so `.context/docs/design.md` becomes a real design-system baseline instead of only a starter file.
 
 Recommended setup:
 
@@ -39,7 +39,16 @@ $workflow-setup
 Set up Codex Workflows for this project.
 ```
 
-The setup skill inspects the project, asks for solo or team mode when needed, creates missing `.context/` files, creates starter `.context/docs/` files, records existing docs, updates the managed Codex Workflows block in `AGENTS.md`, and preserves existing project guidance.
+`$workflow-setup` inspects the project, asks for solo or team mode when needed, creates missing `.context/` files, creates starter `.context/docs/` files, records existing docs, updates the managed Codex Workflows block in `AGENTS.md`, and preserves existing project guidance.
+
+Recommended design setup for UI/front-end projects:
+
+```text
+$workflow-setup-design
+Create or refresh the project design doc from existing code, docs, styles, tokens, and components.
+```
+
+`$workflow-setup-design` runs after `$workflow-setup`. It reads the existing project UI, CSS, tokens, components, Storybook patterns, and docs, then expands `.context/docs/design.md` into DESIGN.md-style guidance with machine-readable front matter and human-readable rules. Skip it only for projects where UI/UX design guidance is irrelevant.
 
 When a workflow skill needs user input, it should use `request_user_input` when that tool is available in the current Codex mode and tool list. The recommended option should be first and labeled `(Recommended)`. If the tool is unavailable, the skill should ask in chat: long-answer questions one numbered question at a time with a recommended default, and short-answer questions as a numbered list. Every question set should recommend a good option.
 
